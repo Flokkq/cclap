@@ -22,6 +22,10 @@
             git-cliff
             gnupg
             pre-commit
+
+            # only a compiler as a dependency because of `nob.h`
+            gcc
+            llvmPackages_19.clang-tools
           ];
         };
       }

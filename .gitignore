@@ -42,3 +42,8 @@ TAGS
 TAGS.*
 
 # Before adding new lines, see the comment at the top.
+nob
+nob.old
+build/
+
+*.exe
