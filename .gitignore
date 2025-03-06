@@ -47,3 +47,4 @@ nob.old
 build/
 
 *.exe
+bin/
