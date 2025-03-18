@@ -85,13 +85,26 @@ void cclap_print_help(const cclap_context *ctx);
 
 #ifdef CCLAP_IMPLEMENTATION
 
+#define TAB "  "
+#include <stdio.h>
+
 void cclap_init(cclap_context *ctx, const char *pname, const char *desc,
                 cclap_arg *argv, int argc) {
-  return;
+  ctx->pname = pname;
+  ctx->desc = desc;
+  ctx->argv = argv;
+  ctx->argc = argc;
 }
 
-int cclap_parse(cclap_context *ctx, int argc, char **argv) { return 1; }
+int cclap_parse(cclap_context *ctx, int argc, char **argv) { return 0; }
 
-void cclap_print_help(const cclap_context *ctx) { return; }
+void cclap_print_help(const cclap_context *ctx) {
+  if (ctx->desc && ctx->desc[0] != '\0') {
+    printf("\n%s\n\n", ctx->desc);
+  }
+
+  printf("Usage:\n%s%s [options]\n", TAB, ctx->pname);
+  printf("\nOptions:\n");
+}
 
 #endif // CCLAP_IMPLEMENTATION

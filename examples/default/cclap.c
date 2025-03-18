@@ -41,5 +41,7 @@ int main(int argc, char **argv) {
 
   printf("Path: %s\n", path);
   printf("FileType: %s\n", FileType_to_string(ft));
+  cclap_print_help(&ctx);
+
   return 0;
 }
